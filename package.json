@@ -1,0 +1,19 @@
+{
+  "name": "mondaybivsmejoradoabd",
+  "version": "1.0.0",
+  "description": "Esto es un programa para consumir la api de monday y almancenarlo en sql server",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^13.1.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.10.0",
+    "node-cron": "^3.0.3"
+  }
+}
