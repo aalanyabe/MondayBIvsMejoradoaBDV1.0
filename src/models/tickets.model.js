@@ -1,5 +1,5 @@
 const {Schema, model, isObjectIdOrHexString} = require('mongoose')
-const collection = 'ticketsPrueba'
+const collection = 'tickets'
 
 const ticketsSchema = new Schema ({
     idTicket:{
