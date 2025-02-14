@@ -22,7 +22,7 @@ const ticketsSchema = new Schema ({
         type: String,
         required: true
     },
-    url:{
+    webUrl:{
         type: String,
         required: true
     },
@@ -30,7 +30,7 @@ const ticketsSchema = new Schema ({
         type: String,
         required: true
     },
-    methodPayment:{
+    methodofPayment:{
         type: String,
         required: true
     },

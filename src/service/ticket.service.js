@@ -17,7 +17,7 @@ const getValuesColumn = async (item) => {
     try {
 
         const subject = item.name
-        const url = item.url
+        const webUrl = item.url
 
         const dataColumn = item.column_values
         const getColumnText = (id) => {
@@ -28,7 +28,7 @@ const getValuesColumn = async (item) => {
         const status = getColumnText('estado4__1').text
         const category = getColumnText('estado__1').text
         const classification = getColumnText('estado0__1').text
-        const methodPayment = getColumnText('estado_12__1').text
+        const methodofPayment = getColumnText('estado_12__1').text
         const area = getColumnText('estado_11__1').text
 
         // const createdTime = getColumnText('fecha_1__1').time
@@ -44,9 +44,9 @@ const getValuesColumn = async (item) => {
             subject,
             status,
             category,
-            url,
+            webUrl,
             classification,
-            methodPayment,
+            methodofPayment,
             area,
             createdDate,
             closedTime,
