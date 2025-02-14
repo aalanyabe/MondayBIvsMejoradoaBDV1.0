@@ -24,7 +24,7 @@ const startSync = async () => {
 startSync();
 
 // Ejecutar cada 10 minutos
-cron.schedule('*/10 * * * *', async () => {
+cron.schedule('0 */2 * * *', async () => {
     console.log('🔄 Ejecutando sincronización...');
     await startSync();
 })
