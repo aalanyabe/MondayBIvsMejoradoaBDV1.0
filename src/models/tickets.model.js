@@ -8,7 +8,8 @@ const ticketsSchema = new Schema ({
     },
     ticketNumber:{
         type: Number,
-        required: true
+        required: true,
+        index: true
     },
     subject:{
         type: String,

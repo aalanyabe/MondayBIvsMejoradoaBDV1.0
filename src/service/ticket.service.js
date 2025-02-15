@@ -39,7 +39,6 @@ const getValuesColumn = (item) => {
 
         }
 
-
     } catch (e) {
         console.error("Error general ", e);
     }
@@ -65,33 +64,31 @@ const processItems = async (items) => {
         console.log(`✅ ${bulkOperations.length} tickets procesados en lote.`);
     }
 };
-const fetchPage = async (cursor = null) => {
-    try {
-        // console.log(`🔄 Obteniendo datos (cursor: ${cursor})`);
+
+const fetchAndProcessAllItems = async () => {
+    let allItems = [];
+    let cursor = null;
+    
+    do {
         const queryToUse = cursor ? await getQuery2(cursor) : query;
         const result = await getDataAPI(access_token, queryToUse, url);
-
         const items = result?.data?.boards?.[0]?.items_page?.items || result?.data?.next_items_page?.items || [];
-        await processItems(items);
+        console.log("longitud de item: ",items.length)
+        
+        allItems.push(...items); // Acumulamos los items en un solo array
+        
+        cursor = result?.data?.next_items_page?.cursor || result?.data?.boards?.[0]?.items_page?.cursor || null; // Obtener el siguiente cursor
 
-        return result?.data?.next_items_page?.cursor || result?.data?.boards?.[0]?.items_page?.cursor || null;
-    } catch (error) {
-        console.error("❌ Error al obtener datos:", error);
-        return null;
-    }
-};
+    } while (cursor); // Continuar hasta que no haya más datos
 
-const updateTicketsMonday2 = async () => {
-    try {
-        let cursor = await fetchPage(); // Primera página
-        while (cursor) {
-            cursor = await fetchPage(cursor);
-        }
-        console.log("✅ Sincronización completa.");
-    } catch (error) {
-        console.error("❌ Error en la sincronización:", error);
+    // Solo una ejecución de bulkWrite con todos los items
+    if (allItems.length > 0) {
+        await processItems(allItems); 
+        console.log(`✅ Se procesaron ${allItems.length} tickets en un solo lote.`);
+    } else {
+        console.log("⚠️ No hay tickets para procesar.");
     }
 };
 
 
-module.exports = { updateTicketsMonday2 }
+module.exports = { fetchAndProcessAllItems }
