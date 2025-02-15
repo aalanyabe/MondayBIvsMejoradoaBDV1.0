@@ -22,6 +22,7 @@ module.exports = {
         mongo_uri: process.env.MONGO_URI,
         database_name: process.env.DATABASE_NAME,
         collection_name: process.env.COLLETION_NAME,
+        port: process.env.PORT,
         options: {
             encrypt: true,
             trustServerCertificate: true

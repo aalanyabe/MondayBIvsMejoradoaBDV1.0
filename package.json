@@ -4,15 +4,17 @@
   "description": "Esto es un programa para consumir la api de monday y almancenarlo en sql server",
   "main": "index.js",
   "scripts": {
-    "dev": "node src/app.js"
+    "dev": "node src/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "commander": "^13.1.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "install": "^0.13.0",
     "mongoose": "^8.10.0",
     "node-cron": "^3.0.3"
   }

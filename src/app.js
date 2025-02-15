@@ -1,4 +1,4 @@
-const cron = require('node-cron')
+// const cron = require('node-cron')
 const { conectMongoDB,disconectMongoDB } = require('./config/db')
 const { syncTickets } = require('./controllers/ticket.controller')
 
@@ -24,7 +24,7 @@ const startSync = async () => {
 startSync();
 
 // Ejecutar cada 2h
-cron.schedule('0 */2 * * *', async () => {
-    console.log('🔄 Ejecutando sincronización...');
-    await startSync();
-})
+// cron.schedule('0 */2 * * *', async () => {
+//     console.log('🔄 Ejecutando sincronización...');
+//     await startSync();
+// })
