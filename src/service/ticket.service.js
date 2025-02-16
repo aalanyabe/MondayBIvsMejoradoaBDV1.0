@@ -32,7 +32,7 @@ const getValuesColumn = (item) => {
             classification: getColumnText('estado0__1').text,
             methodofPayment: getColumnText('estado_12__1').text,
             area: getColumnText('estado_11__1').text,
-            createdDate: getColumnText('fecha_1__1').text ? new Date(getColumnText('fecha_1__1').text) : null,
+            createdTime: getColumnText('fecha_1__1').text ? new Date(getColumnText('fecha_1__1').text) : null,
             closedTime: getColumnText('fecha3__1').text ? new Date(getColumnText('fecha3__1').text) : null,
             storeName: getColumnText('men__desplegable__1').text,
             agentName: getColumnText('personas__1').text,

@@ -40,7 +40,7 @@ const ticketsSchema = new Schema ({
         required: true,
         default: null
     },
-    createdDate:{
+    createdTime:{
         type: Date,
         required: true
     },
