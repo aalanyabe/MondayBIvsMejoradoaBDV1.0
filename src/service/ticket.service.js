@@ -36,7 +36,14 @@ const getValuesColumn = (item) => {
             closedTime: getColumnText('fecha3__1').text ? new Date(getColumnText('fecha3__1').text) : null,
             storeName: getColumnText('men__desplegable__1').text,
             agentName: getColumnText('personas__1').text,
-
+            priority:getColumnText('estado_14__1').text,
+            ITservice: getColumnText('estado0__1').text,
+            ITrequeriment: getColumnText('dup__of_servicio_mkn7swyc').text, 
+            storeSupervisor: getColumnText('estado_1__1').text,
+            previosPaymentMethod: getColumnText('estado_12__1').text,
+            correctedPaymentMethod: getColumnText('color_mkn7yttk').text,
+            satisfaction: getColumnText('clasificaci_n_mkkfsvhp').text, 
+            Comments: getColumnText('texto_largo_mkkfmmk2').text
         }
 
     } catch (e) {

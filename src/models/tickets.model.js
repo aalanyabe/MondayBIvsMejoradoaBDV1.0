@@ -1,69 +1,101 @@
-const {Schema, model, isObjectIdOrHexString} = require('mongoose')
+const { Schema, model, isObjectIdOrHexString } = require('mongoose')
 const collection = 'tickets'
 
-const ticketsSchema = new Schema ({
-    idTicket:{
+const ticketsSchema = new Schema({
+    idTicket: {
         type: String,
-        required: true
+        required: false
     },
-    ticketNumber:{
+    ticketNumber: {
         type: Number,
         required: true,
-        index: true
+        index: false
     },
-    subject:{
+    subject: {
         type: String,
-        required: true
+        required: false
     },
-    status:{
+    status: {
         type: String,
-        required: true
+        required: false
     },
-    category:{
+    category: {
         type: String,
-        required: true
+        required: false
     },
-    webUrl:{
+    webUrl: {
         type: String,
-        required: true
+        required: false
     },
-    classification:{
+    classification: {
         type: String,
-        required: true
+        required: false
     },
-    methodofPayment:{
+    methodofPayment: {
         type: String,
-        required: true
+        required: false
     },
-    area:{
+    area: {
         type: String,
-        required: true,
+        required: false,
         default: null
     },
-    createdTime:{
+    createdTime: {
         type: Date,
-        required: true
+        required: false
     },
-    closedTime:{
+    closedTime: {
         type: Date,
         required: false,
         default: null
 
     },
-    resolutionTimeWorkingHours:{
+    resolutionTimeWorkingHours: {
         type: String,
         required: false
     },
-    storeName:{
+    storeName: {
         type: String,
-        required: true
+        required: false
     },
-    agentName:{
+    agentName: {
         type: String,
-        required: true
+        required: false
     },
+    priority: {
+        type: String,
+        required: false
+    },
+    ITservice: {
+        type: String,
+        required: false
+    },
+    ITrequeriment: {
+        type: String,
+        required: false
+    },
+    storeSupervisor: {
+        type: String,
+        required: false
+    },
+    previosPaymentMethod: {
+        type: String,
+        required: false
+    },
+    correctedPaymentMethod: {
+        type: String,
+        required: false
+    },
+    satisfaction: {
+        type: String,
+        required: false
+    },
+    Comments: {
+        type: String,
+        required: false
+    }
 
 
 })
 
-module.exports = model(collection,ticketsSchema)
+module.exports = model(collection, ticketsSchema)
