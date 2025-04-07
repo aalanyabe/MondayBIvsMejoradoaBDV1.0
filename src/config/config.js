@@ -13,6 +13,7 @@ module.exports = {
     mondayAccessToken: process.env.MONDAY_ACCESS_TOKEN,
     url: process.env.URL,
     query: process.env.QUERY,
+    querystore: process.env.QUERYSTORE,
     query_cursor: process.env.QUERY_CURSOR,
     dbSettings: {
         user: process.env.USER_DB,

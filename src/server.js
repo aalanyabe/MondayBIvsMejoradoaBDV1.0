@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const ticketRoutes = require('./routes/tickets.routes');
+const storeRoutes = require('./routes/store.routes')
 const config = require('./config/config.js')
 const { conectMongoDB } = require('./config/db.js')
 
@@ -20,6 +21,7 @@ conectMongoDB()
 
         // Rutas
         app.use('/api/tickets', ticketRoutes);
+        app.use('/api/store', storeRoutes);
 
         //Midleware de manejo de errores
         app.use((err, req, res, next) => {
